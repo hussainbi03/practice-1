@@ -1,29 +1,61 @@
+# kind: Service
+# apiVersion: v1
+# metadata:
+#   name: nginx-np
+# spec:
+#   type: NodePort
+#   selector:
+#     project: expense
+#     environment: dev
+#     component: backend
+#   ports:
+#   - protocol: TCP
+#     port: 80
+#     targetPort: 80 
+#     nodePort: 30007  
+# ---
+# kind: Pod
+# apiVersion: v1
+# metadata:
+#   name: backend
+#   labels:
+#       project: expense
+#       environment: dev
+#       component: backend
+# spec:
+#   containers:
+#   - name: nginx
+#     image: nginx
 kind: Service
 apiVersion: v1
 metadata:
   name: nginx-np
 spec:
   type: NodePort
-  selector:
+  selector: # labels are used as selectors
     project: expense
-    environment: dev
     component: backend
+    environment: dev
+    version: "1.0.0"
+    demo: np
   ports:
   - protocol: TCP
-    port: 80
-    targetPort: 80 
-    nodePort: 30007  
+    port: 80 # service port
+    targetPort: 80
+    nodePort: 30007
 ---
 kind: Pod
 apiVersion: v1
 metadata:
-  name: backend
+  name: backend-np
   labels:
-      project: expense
-      environment: dev
-      component: backend
+    project: expense
+    component: backend
+    environment: dev
+    version: "1.0.0"
+    demo: np
 spec:
   containers:
   - name: nginx
     image: nginx
-        
+    
