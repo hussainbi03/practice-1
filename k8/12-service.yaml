@@ -15,7 +15,7 @@ spec:
 kind: Pod
 apiVersion: v1
 metadata:
-  name: sample pod
+  name: samplepod
   labels:
     course: Devops
     trainer: shiva
