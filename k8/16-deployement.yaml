@@ -19,4 +19,4 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx
+        image: hussainbi/nginx:1.0
