@@ -25,11 +25,11 @@ kind: Service
 apiVersion: v1
 metadata:
   name: nginx-lb
+spec:
+  type: LoadBalancer 
   selector:   
     app: frontend
     tier: web 
-spec:
-  type: LoadBalancer 
   ports:
   - protocol: TCP
     port: 80
