@@ -22,7 +22,7 @@ spec:
         image: hussainbi/nginx:1.0
 ---
 kind: Service
-apiVetsion: v1
+apiVersion: v1
 metadata:
   name: nginx-lb
 spec:
