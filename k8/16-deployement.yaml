@@ -20,3 +20,19 @@ spec:
       containers:
       - name: nginx
         image: hussainbi/nginx:1.0
+---
+kind: Service
+apiVetsion: v1
+metadata:
+  name: nginx-lb
+spec:
+  type: LoadBalancer
+  labels:    
+    app: frontend
+    tier: web  
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+    nodePort: 30007    
+
