@@ -8,7 +8,7 @@ spec:
     trainer: shiva
     duration: 120hrs
   ports:
-  - protocol: "TCP"
+  - protocol: TCP
     port: 80
     targetPort: 80
 ---
