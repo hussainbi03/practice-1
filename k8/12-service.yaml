@@ -1,0 +1,28 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: service
+spec:
+  selector:
+    course: Devops
+    trainer: shiva
+    duration: 120hrs
+  ports:
+  - protocol: "TCP"
+    port: 80
+    targetPort: 80
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: sample pod
+  labels:
+    course: Devops
+    trainer: shiva
+    duration: 120hrs
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+
+
