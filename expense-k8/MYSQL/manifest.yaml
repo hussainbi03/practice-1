@@ -16,7 +16,7 @@ spec:
       tier: sql
   template:
     metadata:
-      layers:
+      labels:
         project: expense
         env: dev
         tier: sql
