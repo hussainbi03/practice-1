@@ -28,7 +28,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: frontend-lb
+  name: frontend
 spec:
   type: LoadBalancer
   selector:

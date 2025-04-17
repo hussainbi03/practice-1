@@ -28,7 +28,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: mysql-lb
+  name: mysql
 spec:
   selector:
     project: expense

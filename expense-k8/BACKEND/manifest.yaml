@@ -29,7 +29,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: backend-lb
+  name: backend
 spec:
   selector:
     project: expense
