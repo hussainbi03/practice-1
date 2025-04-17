@@ -16,11 +16,11 @@ spec:
       tier: backend
   template:
     metadata:
-    name: backend
-    labels:
-      project: expense
-      env: dev
-      tier: backend    
+      name: backend
+      labels:
+        project: expense
+        env: dev
+        tier: backend    
     spec:
       containers:
       - name: nginx
