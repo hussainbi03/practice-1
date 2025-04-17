@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: hussainbi/backend            
+        image: hussainbi/backend:1.0.0         
 ---
 kind: Service
 apiVersion: v1
