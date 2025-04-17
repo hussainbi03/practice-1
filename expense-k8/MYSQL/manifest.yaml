@@ -1,0 +1,44 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: mysql
+  namespace: expense
+  labels:
+    project: expense
+    env: dev
+    tier: sql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      project: expense
+      env: dev
+      tier: sql
+  template:
+    metadata:
+      layers:
+        project: expense
+        env: dev
+        tier: sql
+    spec:  
+      containers:
+      - name: nginx
+        image: hussainbi/mysql:1.0.0
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: mysql-lb
+spec:
+  selector:
+    project: expense
+    env: dev
+    tier: sql
+  ports:
+  - protocol: TCP
+    port: 3306
+    targetPort: 3306
+
+
+
+

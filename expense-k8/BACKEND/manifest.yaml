@@ -1,0 +1,44 @@
+kind: Deployment
+verSion: apps/v1
+metadata:
+  name: 
+  namespace: expense
+  layers:
+    project: expense
+    env: dev
+    tier: backend
+spec:
+  replicas: 1
+  selector:
+    matchLayers:
+      project: expense
+      env: dev
+      tier: backend
+  template:
+    metadata:
+    name: backend
+    layers:
+      project: expense
+      env: dev
+      tier: backend    
+    spec:
+      containers:
+      - name: nginx
+        image: hussainbi/backend            
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: backend-lb
+spec:
+  selector:
+    project: expense
+    env: dev
+    tier: backend
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+ 
+
+

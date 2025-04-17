@@ -1,0 +1,43 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: frontend
+  namespace: expense
+  layers:
+    project: expense
+    env: dev
+    tier: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      project: expense
+      env: dev
+      tier: frontend 
+  template:
+    metadata:
+      layers:
+        project: expense
+        env: dev
+        tier: frontend  
+    spec:
+      containers:
+      - name: nginx
+        image: hussainbi/frontend:1.0.0
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: frontend-lb
+spec:
+  type: LoadBalancer
+  selector:
+    project: expense
+    env: dev
+    tier: frontend  
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+
+
