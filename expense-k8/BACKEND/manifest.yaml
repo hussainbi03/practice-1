@@ -1,5 +1,5 @@
+apiversion: apps/v1
 kind: Deployment
-verSion: apps/v1
 metadata:
   name: 
   namespace: expense
