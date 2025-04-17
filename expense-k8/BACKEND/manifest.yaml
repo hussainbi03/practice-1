@@ -3,21 +3,21 @@ kind: Deployment
 metadata:
   name: backend
   namespace: expense
-  layers:
+  labels:
     project: expense
     env: dev
     tier: backend
 spec:
   replicas: 1
   selector:
-    matchLayers:
+    matchLabels:
       project: expense
       env: dev
       tier: backend
   template:
     metadata:
     name: backend
-    layers:
+    labels:
       project: expense
       env: dev
       tier: backend    

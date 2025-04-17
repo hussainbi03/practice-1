@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: frontend
   namespace: expense
-  layers:
+  labels:
     project: expense
     env: dev
     tier: frontend
@@ -16,7 +16,7 @@ spec:
       tier: frontend 
   template:
     metadata:
-      layers:
+      labels:
         project: expense
         env: dev
         tier: frontend  
