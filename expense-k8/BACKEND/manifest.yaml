@@ -16,7 +16,6 @@ spec:
       tier: backend
   template:
     metadata:
-      name: backend
       labels:
         project: expense
         env: dev
@@ -30,6 +29,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: backend
+  namespace: expense
 spec:
   selector:
     project: expense
