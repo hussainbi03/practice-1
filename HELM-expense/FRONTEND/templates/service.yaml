@@ -1,15 +1,15 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: mysql
+  name: frontend
   namespace: expense
 spec:
-  selector:  #labels are used as selectiors
-    app: mysql
-    tier: mysql
+  type: LoadBalancer
+  selector: # labels are used as selectors
+    app: frontend
+    tier: web
     project: expense
   ports:
   - protocol: TCP
-    port: 3306 #service port
-    targetPort: 3306        
-        
+    port: 80 # service port
+    targetPort: 8080
