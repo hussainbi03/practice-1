@@ -2,4 +2,4 @@ apiVersion: v2
 name: nginx
 version: 1.0.0 
 description: this is nginx deployment
-appVersion: stable-alpine-perl
+appVersion: latest
