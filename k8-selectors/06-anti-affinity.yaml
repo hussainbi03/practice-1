@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: anti-affinity
   labels:
-    purpose: "anti-affinity-demo"
+    purpose: "anti- affinity-demo"
 spec:
   affinity:
     nodeAffinity:
